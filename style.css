@@ -1,0 +1,206 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'arial';
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+}
+.homepage{
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    background-image: url('./Luffy-New-Wallpaper.jpg');
+    background-size: cover;
+    background-position: 60%;
+    position: relative;
+}
+.homepage-fillter{
+    position: fixed;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.411);
+    backdrop-filter: blur(2px);
+}
+nav{
+    z-index: 2;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 85px;
+    padding:2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+}
+nav.scrolled{
+    transition: 0.5s ease;
+    position: fixed;
+    transform: translateY(-110px);
+    background-color: white;
+}
+nav.scrolled a{
+    color: black;
+}
+.scrolled .social-links img{
+    filter: none;
+}
+nav.scrolled{
+    transform: translateY(0px);
+}
+.logo img{
+    height: 55px;
+    width: auto;
+}
+nav .logo img{
+    filter: saturate(0%) contrast(150%);
+}
+.menu-icon{
+    position: absolute;
+    right: 2rem;
+}
+.menu-icon .bar{
+    display: flex;
+    flex-direction: column;
+    margin: 3px;
+    width: 30px;
+    height: 4px;
+    border-radius: 5px;
+    background-color: black;
+    transition: 0.2s;
+}
+nav.expanded .menu-icon .bar{
+    margin: -4px;
+}
+nav.expanded .menu-icon div:first-child{
+    transform: rotateZ(45deg);
+}
+nav.expanded .menu-icon div:last-child{
+    transform: rotateZ(-45deg);
+}
+nav.expanded .menu-icon div:nth-child(2){
+    opacity: 0;
+}
+.nav-links{
+    display: grid;
+    position: absolute;
+    z-index: 10;
+    top: 85px;
+    left: 0;
+    width: 100vw;
+    height: 0;
+    transition: 0.5s;
+    overflow: hidden;
+    background-color: white;
+}
+
+nav.expanded .nav-links{
+    height: 357px;
+}
+.nav-links a{
+    padding: 1rem;
+    text-decoration: none;
+    color: black;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.116);
+}
+.social-links{
+    display: none;
+}
+main{
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    width: 100%;
+    height: 100%;
+}
+header{
+    z-index: 1;
+    color: white;
+    font-weight: bolder;
+    width: 100%;
+    font-size: 3.5rem;
+    width: max-content;
+}
+.changeing-heading{
+    font-size: 2rem;
+    height: min-content;
+}
+.changeing-heading div{
+    padding: 1rem 0px;
+    overflow: none;
+    transition: opacity 1s ease;
+}
+.tag-line{
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.596);
+    font-weight: 200;
+}
+svg{
+    display: none;
+}
+.screen-2{
+    background-color: white;
+    width: 100vw;
+    height: 200vh;/* change to auto*/
+
+}
+@media screen and (min-width:850px){
+
+    .menu-icon{
+        display: none;
+    }
+    nav{
+        background-color: rgba(255, 255, 255, 0);
+        height: 100px;
+    }
+    .logo img{
+        height: 70px;
+    }
+    .nav-links{
+        position: static;
+        display: flex;
+        height: 85px;
+        background-color: rgba(255, 255, 255, 0);
+        width: 100%;
+        justify-content: center;
+    }
+    .nav-links a{
+        color: rgba(255, 255, 255, 0.5);
+        border: none;
+        display: grid;
+        place-content: center;
+    }
+    .social-links{
+        display: flex;
+        gap: 5px;
+    }
+    .social-links img{
+        height: 25px;
+        filter: invert() opacity(50%);
+    }
+    main{
+        padding: 2rem;
+    }
+    header{
+        font-size: 5rem;
+    }
+    .changeing-heading{
+        font-size: 3rem;
+        height: min-content;
+    }
+    .changeing-heading div{
+        padding: 1rem 0px;
+        overflow: none;
+        transition: opacity 1s ease;
+    }
+    .tag-line{
+        font-size: 1.4rem;
+        color: rgba(255, 255, 255, 0.596);
+        font-weight: 200;
+    }
+}
